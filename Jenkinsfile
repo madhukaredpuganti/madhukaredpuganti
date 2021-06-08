@@ -22,6 +22,7 @@ pipeline {
                   sh 'echo "Clone stage"'
                    sh 'echo "Clone stage"'
                    sh 'echo "Clone stage"'
+                    sh 'echo "Clone stage"'
             }
             
         }
