@@ -16,7 +16,7 @@ pipeline {
         stage('Clone') {
             
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'
+                git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'
                 sh 'echo "Clone stage"'
                  sh 'echo "Clone stage"'
                   sh 'echo "Clone stage"'
