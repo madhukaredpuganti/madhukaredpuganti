@@ -4,25 +4,24 @@ pipeline {
     
     stages {
         
-        stage('Test Pipeline') {
-            
+        stage('Test Pipeline') {            
             steps {
-                sh 'echo "My project is under test state"'
-                
-            }
-            
+                sh 'echo "My project is under test state"'                
+            }            
         }
         
+        stage('Clone') {            
+            steps {
+                git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'             
+            }            
+        }
+
         stage('Clone') {
             
             steps {
-                git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'
-                sh 'echo "Clone stage"'
-                 sh 'echo "Clone stage"'
-                  sh 'echo "Clone stage"'
-                   sh 'echo "Clone stage"'
-                   sh 'echo "Clone stage"'
-                    sh 'echo "Clone stage"'
+                withMaven {
+                    sh "mvn clean verify"
+                }
             }
             
         }
