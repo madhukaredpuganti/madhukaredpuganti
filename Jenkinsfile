@@ -16,7 +16,7 @@ pipeline {
             }            
         }
 
-        stage('Clone') {
+        stage('Build') {
             
             steps {
                 withMaven {
