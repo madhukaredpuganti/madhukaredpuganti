@@ -21,15 +21,20 @@ pipeline {
             }            
         }
 
-        stage('Build') {
-            
+        stage('Build & Package') {            
             steps {
                 withMaven {
-                    sh "mvn clean verify"
+                    sh "mvn clean package"
                 }
-            }
-            
+            }            
         }
+
+        stage('Image') {            
+            steps {
+                sh 'echo "Create Image"'     
+            }            
+        }
+
     }
     
     post {
