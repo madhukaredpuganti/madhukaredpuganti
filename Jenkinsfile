@@ -4,6 +4,7 @@ pipeline {
 
     tools {
         maven 'MAVEN_SERVICE'
+        jdk 'jdk8'
     }
     
     stages {
