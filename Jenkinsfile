@@ -31,7 +31,7 @@ pipeline {
 
         stage('Image') {            
             steps {
-                sh 'echo "Create Image"'     
+               googleCloudBuild request: file('cloudbuild.yml')   
             }            
         }
 
