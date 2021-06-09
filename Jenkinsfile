@@ -29,20 +29,11 @@ pipeline {
             }            
         }
 
-        stage('Cloud Build') {            
+        stage('Image') {            
             steps {
-               googleCloudBuild \
-                    credentialsId: 'my-project',
-                    source: local('src'),
-                    request: file('cloudbuild.yaml'),
-                    substitutions: [
-                      _CUSTOM1: message,
-                      _CUSTOM2: "Lorem ipsum, dolor sit amet."
-                 ]  
+                sh 'echo "Create Image"'     
             }            
         }
-
-        stage
 
     }
     
