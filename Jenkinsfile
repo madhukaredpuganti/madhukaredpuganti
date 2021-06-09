@@ -29,11 +29,20 @@ pipeline {
             }            
         }
 
-        stage('Image') {            
+        stage('Cloud Build') {            
             steps {
-               googleCloudBuild request: file('cloudbuild.yml')   
+               googleCloudBuild \
+                    credentialsId: 'my-project',
+                    source: local('src'),
+                    request: file('cloudbuild.yaml'),
+                    substitutions: [
+                      _CUSTOM1: message,
+                      _CUSTOM2: "Lorem ipsum, dolor sit amet."
+                 ]  
             }            
         }
+
+        stage
 
     }
     
