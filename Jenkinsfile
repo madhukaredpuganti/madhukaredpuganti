@@ -8,10 +8,10 @@ pipeline {
     }
     
     environment {
-        PROJECT_ID = ''
-        CLUSTER_NAME = ''
-        LOCATION = ''
-        CREDENTIALS_ID = ''
+        PROJECT_ID = 'cto-opus-frictionless-lab-47f9'
+        CLUSTER_NAME = 'kube'
+        LOCATION = 'test'
+        CREDENTIALS_ID = 'cto-opus-frictionless-lab-47f9'
     }
 
     stages {
