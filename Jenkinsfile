@@ -7,6 +7,13 @@ pipeline {
         jdk 'jdk8'
     }
     
+    environment {
+        PROJECT_ID = ''
+        CLUSTER_NAME = ''
+        LOCATION = ''
+        CREDENTIALS_ID = ''
+    }
+
     stages {
         
         stage('Test Pipeline') {            
@@ -34,6 +41,14 @@ pipeline {
             steps {
                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: repo(branch: 'main')
             }            
+        }
+
+        stage('Deploy TO gke') {
+
+          steps {
+                       sh 'echo "Deploy"'      
+          }  
+
         }
 
         
