@@ -14,10 +14,17 @@ pipeline {
                 sh 'echo "My project is under test state"'                
             }            
         }
+
         
         stage('Clone') {            
             steps {
                 git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'             
+            }            
+        }
+
+        stage('Image') {            
+            steps {
+               googleCloudBuild credentialsId: 'cto-opus-frictionless-lab', request: file('cloudbuild.yml'), source: repo(branch: 'main')
             }            
         }
 
@@ -29,11 +36,7 @@ pipeline {
             }            
         }
 
-        stage('Image') {            
-            steps {
-               googleCloudBuild credentialsId: 'test', request: file('cloudbuild.yml'), source: repo(branch: 'main')
-            }            
-        }
+        
 
        
 
