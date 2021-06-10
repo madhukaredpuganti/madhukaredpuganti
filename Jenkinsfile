@@ -46,7 +46,7 @@ pipeline {
         stage('Deploy TO gke') {
 
           steps {
-                       sh 'echo "Deploy"'      
+                       sh 'echo "My project is under test state"'     
           }  
 
         }
