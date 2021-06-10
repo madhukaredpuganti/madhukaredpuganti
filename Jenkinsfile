@@ -31,7 +31,7 @@ pipeline {
 
         stage('Image') {            
             steps {
-               googleCloudBuild credentialsId: 'test' request: file('cloudbuild.yml'), source: repo(branch: 'main')
+               googleCloudBuild credentialsId: 'test', request: file('cloudbuild.yml'), source: repo(branch: 'main')
             }            
         }
 
