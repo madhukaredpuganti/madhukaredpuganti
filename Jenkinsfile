@@ -24,7 +24,7 @@ pipeline {
 
         stage('Image') {            
             steps {
-               googleCloudBuild credentialsId: 'cto-opus-frictionless-lab', request: file('cloudbuild.yml'), source: repo(branch: 'main')
+               googleCloudBuild credentialsId: 'access', request: file('cloudbuild.yml'), source: repo(branch: 'main')
             }            
         }
 
