@@ -43,7 +43,9 @@ pipeline {
 
         stage('Image') {            
             steps {
-              googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml')
+              googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: inline('''steps:
+- name: \'gcr.io/cloud-builders/docker\'
+  args: [\'build\', \'-t\', \'gcr.io/$PROJECT_ID/my-image:1.0.0\', \'.\']''')
 //                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: inline('''steps:
 //   - name: ubuntu
 //     args: [echo]''')
