@@ -1,4 +1,4 @@
-FROM gcr.io/cto-opus-frictionless-lab-47f9/helloworld@sha256:38042f470d22909fd19b2b1cee2cc5a87c4daebddcbfc115c942df91d4380a69
+FROM java
 
 ENV APP_HOME=/usr/app/
 ENV JAR_OPTS=""
