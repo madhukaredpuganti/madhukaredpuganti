@@ -1,2 +1,2 @@
 steps:
-- name: ubuntu
+- name: 'ubuntu'
