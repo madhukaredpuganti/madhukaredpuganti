@@ -39,10 +39,10 @@ pipeline {
 
         stage('Image') {            
             steps {
-               //googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: repo(branch: 'main')
-               googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: inline('''steps:
-  - name: ubuntu
-    args: [echo]''')
+               googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yml'), source: repo(branch: 'main')
+//                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: inline('''steps:
+//   - name: ubuntu
+//     args: [echo]''')
             }            
         }
 
