@@ -1,3 +1,3 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-image:1.0.0', '-f', '/bitnami/jenkins/home/workspace/microservice-build-deploy/Dockerfile']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-image', '-f', '/bitnami/jenkins/home/workspace/microservice-build-deploy/Dockerfile']
