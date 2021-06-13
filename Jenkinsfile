@@ -36,7 +36,6 @@ pipeline {
                     sh '''
                     ls
                     pwd
-                    ls /workspace/
                     '''
                 }
             }            
