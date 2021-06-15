@@ -1,5 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/microservice:${GIT_COMMIT}', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/microservice:${_SUB_VALUE}', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/microservice:${GIT_COMMIT}']
+  args: ['push', 'gcr.io/$PROJECT_ID/microservice:${_SUB_VALUE}']
+substitutions:
+    _SUB_VALUE: 1.0.1
