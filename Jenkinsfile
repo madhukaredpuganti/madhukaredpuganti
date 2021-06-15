@@ -44,7 +44,7 @@ pipeline {
 
         stage('Image') {            
             steps {
-                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: local('/bitnami/jenkins/home/workspace/microservice-build-deploy'), substitutions: [_SUB_VALUE: '${VERSION}']
+                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: local('/bitnami/jenkins/home/workspace/microservice-build-deploy'), substitutions: [_SUB_VALUE: '1.0.4']
                 //googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: local('/bitnami/jenkins/home/workspace/microservice-build-deploy')
                 //googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: repo(branch: 'dev', projectId: 'cto-opus-frictionless-lab-47f9', repoName: 'github_telus-csd-tvs_testrepo')
               //googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml')
