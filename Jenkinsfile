@@ -43,7 +43,7 @@ pipeline {
 
         stage('Image') {            
             steps {
-              googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml'), source: local('/bitnami/jenkins/home/workspace/microservice-build-deploy')
+              googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: file('cloudbuild.yaml')
 //                googleCloudBuild credentialsId: 'cto-opus-frictionless-lab-47f9', request: inline('''steps:
 //   - name: ubuntu
 //     args: [echo]''')
