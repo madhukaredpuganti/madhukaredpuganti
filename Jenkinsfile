@@ -8,10 +8,10 @@ pipeline {
     }
     
     environment {
-        PROJECT_ID = 'cto-opus-frictionless-lab'
-        CLUSTER_NAME = 'kube'
-        LOCATION = 'test'
-        CREDENTIALS_ID = 'cto-opus-frictionless-lab'
+        PROJECT_ID = 'cto-opus-frictionless-lab-47f9'
+        CLUSTER_NAME = 'example-private-cluster'
+        LOCATION = 'northamerica-northeast1-a'
+        CREDENTIALS_ID = 'cto-opus-frictionless-lab-47f9'
         VERSION = '1.0.2'
     }
 
@@ -57,7 +57,17 @@ pipeline {
         stage('Deploy TO gke') {
 
           steps {
-                       sh 'echo "My project is under test state"'     
+                       sh 'echo "My project is under test state"'  
+                       steps{
+                            step([
+                            $class: 'KubernetesEngineBuilder',
+                            projectId: env.PROJECT_ID,
+                            clusterName: env.CLUSTER_NAME,
+                            location: env.LOCATION,
+                            manifestPattern: 'manifest.yaml',
+                            credentialsId: env.CREDENTIALS_ID,
+                            verifyDeployments: true])
+                      }   
           }  
 
         }
