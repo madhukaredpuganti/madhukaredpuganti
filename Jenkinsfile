@@ -24,7 +24,7 @@ pipeline {
         }
 
         
-        stage('Clone') {            
+ /*       stage('Clone') {            
             steps {
                 git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'             
             }            
