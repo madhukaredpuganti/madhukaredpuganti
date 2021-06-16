@@ -24,7 +24,7 @@ pipeline {
         }
 
         
- /*       stage('Clone') {            
+        stage('Clone') {            
             steps {
                 git branch: 'main', changelog: true, poll: true, url: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git'             
             }            
@@ -61,9 +61,9 @@ pipeline {
                       
                             step([
                             $class: 'KubernetesEngineBuilder',
-                            projectId: env.PROJECT_ID,
-                            clusterName: env.CLUSTER_NAME,
-                            location: env.LOCATION,
+                            projectId: env.cto-opus-frictionless-lab-47f9,
+                            clusterName: env.example-private-cluster,
+                            location: env.northamerica-northeast1-a,
                             manifestPattern: 'manifest.yml',
                             credentialsId: env.CREDENTIALS_ID,
                             verifyDeployments: true])  
