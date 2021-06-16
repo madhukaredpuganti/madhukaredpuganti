@@ -64,7 +64,7 @@ pipeline {
                             projectId: 'cto-opus-frictionless-lab-47f9',
                             clusterName: 'example-private-cluster',
                             location: 'northamerica-northeast1-a',
-                            manifestPattern: 'manifest.yml',
+                            manifestPattern: 'git@github.com:madhukaredpuganti/madhukaredpuganti.git',
                             credentialsId: CREDENTIALS_ID,
                             verifyDeployments: true])  
           }  
