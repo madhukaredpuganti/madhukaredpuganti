@@ -61,11 +61,11 @@ pipeline {
                       
                             step([
                             $class: 'KubernetesEngineBuilder',
-                            projectId: env.cto-opus-frictionless-lab-47f9,
-                            clusterName: env.example-private-cluster,
-                            location: env.northamerica-northeast1-a,
+                            projectId: cto-opus-frictionless-lab-47f9,
+                            clusterName: example-private-cluster,
+                            location: northamerica-northeast1-a,
                             manifestPattern: 'manifest.yml',
-                            credentialsId: env.CREDENTIALS_ID,
+                            credentialsId: CREDENTIALS_ID,
                             verifyDeployments: true])  
           }  
 
