@@ -33,8 +33,7 @@ pipeline {
         stage('Build & Package') {            
             steps {
                 withMaven {
-                    //sh "mvn clean package"
-                    sh '''
+                    sh "mvn clean package"
                     ls
                     pwd
                     '''
