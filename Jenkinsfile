@@ -62,16 +62,19 @@ pipeline {
         stage('Deploy TO gke') {
 
           steps {
-                       sh 'echo "My project is under test state"'  
-                       sh 'PATH=/opt/bitnami/common/bin:/opt/bitnami/java/bin:/opt/bitnami/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr'
-                            step([
-                            $class: 'KubernetesEngineBuilder',
-                            projectId: 'cto-opus-frictionless-lab-47f9',
-                            clusterName: 'example-private-cluster',
-                            location: 'northamerica-northeast1-a',
-                            manifestPattern: 'manifest.yaml',
-                            credentialsId: 'cto-opus-frictionless-lab-47f9',
-                            verifyDeployments: true])  
+                sh 'echo "My project is under test state"'  
+                sh 'PATH=/opt/bitnami/common/bin:/opt/bitnami/java/bin:/opt/bitnami/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr'
+               
+                step([
+                $class: 'KubernetesEngineBuilder',
+                projectId: 'cto-opus-frictionless-lab-47f9',
+                clusterName: 'example-private-cluster',
+                location: 'northamerica-northeast1-a',
+                manifestPattern: 'manifest.yaml',
+                credentialsId: 'cto-opus-frictionless-lab-47f9',
+                verifyDeployments: true])  
+
+                sh 'echo $PATH'
           }  
 
         }
