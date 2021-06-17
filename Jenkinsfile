@@ -13,9 +13,15 @@ pipeline {
         LOCATION = 'northamerica-northeast1-a'
         CREDENTIALS_ID = 'cto-opus-frictionless-lab-47f9'
         VERSION = '1.0.2'
+        KUBECTL = '/usr/kubectl'
     }
 
     stages {
+         stage('first') {
+            steps {
+               sh "printenv | sort"
+            }
+        }
         
         stage('Test Pipeline') {            
             steps {
