@@ -13,7 +13,6 @@ pipeline {
         LOCATION = 'northamerica-northeast1-a'
         CREDENTIALS_ID = 'cto-opus-frictionless-lab-47f9'
         VERSION = '1.0.2'
-        KUBECTL = '/usr/kubectl'
     }
 
     stages {
@@ -64,7 +63,7 @@ pipeline {
 
           steps {
                        sh 'echo "My project is under test state"'  
-                       sh 'cp /usr/kubectl /usr/bin'
+                       sh 'PATH=/opt/bitnami/common/bin:/opt/bitnami/java/bin:/opt/bitnami/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr'
                             step([
                             $class: 'KubernetesEngineBuilder',
                             projectId: 'cto-opus-frictionless-lab-47f9',
