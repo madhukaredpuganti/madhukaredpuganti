@@ -58,7 +58,11 @@ pipeline {
 //     args: [echo]''')
             }            
         }
-
+        stage('List pods') {
+        withKubeConfig([credentialsId: 'kubeconfig']) {
+        sh 'kubectl get pods'
+        }
+        }
         stage('Deploy TO gke') {
 
           steps {
