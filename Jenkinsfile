@@ -64,7 +64,7 @@ pipeline {
 
           steps {
                        sh 'echo "My project is under test state"'  
-                      
+                       sh 'cp /usr/kubectl /usr/bin'
                             step([
                             $class: 'KubernetesEngineBuilder',
                             projectId: 'cto-opus-frictionless-lab-47f9',
