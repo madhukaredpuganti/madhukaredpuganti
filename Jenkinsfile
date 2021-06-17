@@ -11,7 +11,7 @@ pipeline {
         PROJECT_ID = 'cto-opus-frictionless-lab-47f9'
         CLUSTER_NAME = 'example-private-cluster'
         LOCATION = 'northamerica-northeast1-a'
-        CREDENTIALS_ID = 'cto-opus-frictionless-lab-47f9'
+        CREDENTIALS_ID = 'jenkins-sa'
         VERSION = '1.0.2'
     }
 
@@ -65,7 +65,7 @@ pipeline {
                             clusterName: 'example-private-cluster',
                             location: 'northamerica-northeast1-a',
                             manifestPattern: 'manifest.yaml',
-                            credentialsId: 'cto-opus-frictionless-lab-47f9',
+                            credentialsId: 'jenkins-sa',
                             verifyDeployments: true])  
           }  
 
